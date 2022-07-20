@@ -11,4 +11,6 @@ import com.spring.entity.Board;
 public interface BoardMapper {
 //	@Select("select * from myboard")
 	public List<Board> getLists();
+	
+	public void boardInsert(Board board);
 }

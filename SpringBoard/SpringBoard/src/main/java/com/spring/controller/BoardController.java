@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.spring.entity.Board;
 import com.spring.mapper.BoardMapper;
@@ -31,4 +32,10 @@ public class BoardController {
 		return "boardForm";
 	}
 	
+	@PostMapping("/boardInsert.do")
+	public String boardInsert(@ModelAttribute Board board) {
+		
+		mapper.boardInsert(board);
+		return "redirect:/boardList.do";
+	}
 }

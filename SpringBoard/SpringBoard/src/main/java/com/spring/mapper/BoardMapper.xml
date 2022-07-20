@@ -17,4 +17,8 @@
        		  order by idx desc;
             </select>
         
+        <insert id="boardInsert" parameterType="com.spring.entity.Board">
+        	insert into myboard(title,content,writer) values(#{title},#{content},#{writer})
+        </insert>
+        
         </mapper>
