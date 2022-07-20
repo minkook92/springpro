@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.spring.entity.Board;
 import com.spring.mapper.BoardMapper;
@@ -22,7 +23,12 @@ public class BoardController {
 		
 		List<Board> boards = mapper.getLists();
 		model.addAttribute("boards", boards);
-		
 		return "boardList";
 	}
+	
+	@GetMapping("/boardForm.do")
+	public String boardForm(@ModelAttribute Board board) {
+		return "boardForm";
+	}
+	
 }

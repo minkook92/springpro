@@ -5,8 +5,16 @@
         
         <mapper namespace="com.spring.mapper.BoardMapper">
         
-            <select id="getLists" resultType="com.spring.entity.Board">
-                select * from board order by desc;
+         <select id="getLists" resultType="com.spring.entity.Board">
+           select 
+               	idx
+                ,title
+                ,content
+                ,writer
+                ,indate
+                ,count 
+       		  from myboard 
+       		  order by idx desc;
             </select>
         
         </mapper>

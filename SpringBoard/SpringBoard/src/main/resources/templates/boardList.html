@@ -31,10 +31,8 @@
 						<td th:text="${board.indate}">작성일자</td>
 						<td th:text="${board.count}">조회수</td>
 					</tr>
-
-
 				</table>
-
+				<a th:href="@{/boardForm.do}" class="btn btn-primary btn-sm">글쓰기 </a>
 			</div>
 			<div class="panel-body">Panel Content</div>
 		</div>
