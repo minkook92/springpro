@@ -26,7 +26,7 @@
 					</tr>
 					<tr th:each="board: ${boards}">
 						<td th:text="${board.idx}">번호</td>
-						<td th:text="${board.title}">제목</td>
+						<td th:text="${board.title}" th:onclick="|location.href='@{boardContent.do(idx=${board.idx})}'|" >제목</td>
 						<td th:text="${board.writer}">작성자</td>
 						<td th:text="${board.indate}">작성일자</td>
 						<td th:text="${board.count}">조회수</td>

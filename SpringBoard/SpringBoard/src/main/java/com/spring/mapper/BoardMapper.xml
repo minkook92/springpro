@@ -21,4 +21,20 @@
         	insert into myboard(title,content,writer) values(#{title},#{content},#{writer})
         </insert>
         
+        <select id="boardContent" parameterType="int" resultType="com.spring.entity.Board">
+        	select * from myboard where idx = #{idx}
+        </select>
+        
+        <delete id="boardDelete" parameterType="int" >
+        	delete from myboard where idx = #{idx}
+        </delete>
+        
+        <update id="boardUpdate" parameterType="com.spring.entity.Board" >
+        	update myboard set title=#{title}, content=#{content} where idx=#{idx}
+        </update>
+        
+        <update id="boardCount" parameterType="int">
+        	update myboard set count = count + 1 where idx=#{idx}
+        </update>
+        
         </mapper>

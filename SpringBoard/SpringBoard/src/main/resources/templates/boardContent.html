@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<h2>게시글 상세보기</h2>
+		<div class="panel panel-default">
+			<div class="panel-heading">게시글 상세</div>
+			<div class="panel-body">
+				<table class="table" th:object="${board}">
+					<tr>
+						<td>제목</td>
+						<td th:text="*{title}"></td>
+					</tr>
+					<tr>
+						<td>내용</td>
+						<td th:text="*{content}"></td>
+					</tr>
+					<tr>
+						<td>작성자</td>
+						<td th:text="*{writer}"></td>
+					</tr>
+					<tr>
+						<td>작성일</td>
+						<td th:text="*{indate} "></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<a th:href="@{/boardUpdateForm.do(idx=${board.idx})}" class="btn btn-primary btn-sm">수정</a>
+							<a th:href="@{/boardDelete.do(idx=${board.idx})}" class="btn btn-primary btn-sm">삭제</a>
+							<a th:href="@{/boardList.do}" class="btn btn-info btn-sm">목록</a>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
