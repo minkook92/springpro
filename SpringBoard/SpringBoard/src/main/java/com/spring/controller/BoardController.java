@@ -53,9 +53,9 @@ public class BoardController {
 	 */
 	
  
-	@RequestMapping("/")
+	@RequestMapping("/boardMain.do")
 	public String main() {
-		return "main";
+		return "/board/main";
 	}
 	
 	
