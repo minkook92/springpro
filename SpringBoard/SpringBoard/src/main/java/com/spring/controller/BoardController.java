@@ -52,30 +52,12 @@ public class BoardController {
 	 * mapper.boardUpdate(board); return "redirect:/boardList.do"; }
 	 */
 	
-	@Autowired
-	BoardMapper boardMapper;
-	
+ 
 	@RequestMapping("/")
 	public String main() {
 		return "main";
 	}
 	
-	@RequestMapping("/boardList.do")
-	public @ResponseBody List <Board> boardList(){
-		
-		List<Board> list = boardMapper.getLists();
-		return list;
-	}
-	
-	@RequestMapping("/boardInsert.do")
-	public @ResponseBody void boardInsert(Board board) {
-		boardMapper.boardInsert(board);
-	}
-	
-	@RequestMapping("/boardDelete.do")
-	public @ResponseBody void boardDelete(@RequestParam("idx") int idx) {
-		boardMapper.boardDelete(idx);
-	}
 	
 	
 }
